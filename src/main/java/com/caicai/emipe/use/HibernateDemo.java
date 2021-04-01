@@ -50,12 +50,20 @@ public class HibernateDemo {
 
 
     public void testSpecification() {
+        /**
+         * CriteriaQuery接口:
+         * 代表一个specific的顶层查询对象，它包含着查询的各个部分，比如：select 、from、where、group by、order by等注意：CriteriaQuery对象只对实体类型或嵌入式类型的Criteria查询起作用
+         *
+         */
+        // predicate 谓词，里面有很很多条件
+        // root 组成表达式
         Specification<ScoreFlow> sp = new Specification<ScoreFlow>() {
             private static final long serialVersionUID = -3393548923234220309L;
 
             @Override
-            public Predicate toPredicate(Root<ScoreFlow> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-                return criteriaBuilder.equal(root.get("userId").as(String.class), null);
+            public Predicate toPredicate(Root<ScoreFlow> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                Predicate p1 = cb.equal(root.get("userId").as(String.class), "1234");
+                return p1;
             }
         };
         List<ScoreFlow> result = scoreFlowRepository.findAll(sp);

@@ -1,5 +1,10 @@
 package com.caicai.emipe.use;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * @author caicai+.0000000
  * @create 2021/3/26
@@ -12,5 +17,12 @@ public class IntegerDemo {
         Integer b1 = Integer.valueOf(100);
         Integer b2 = Integer.valueOf(100);
         System.out.println("是不是内存地址一样呢？" + (b1 == b2));
+    }
+
+    private void testList() {
+        Collection<String> ss = new ArrayList<>();
+        List<String> jio = new ArrayList<>();
+        Iterator<String> it = jio.iterator();
+
     }
 }
