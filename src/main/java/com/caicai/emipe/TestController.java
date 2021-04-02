@@ -45,4 +45,9 @@ public class TestController {
     public void test() {
         hibernateDemo.testSpecification();
     }
+
+    @PostMapping("saveNotNull")
+    public void saveNotNull() {
+        hibernateDemo.testSpecification();
+    }
 }
