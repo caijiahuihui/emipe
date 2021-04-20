@@ -1,4 +1,4 @@
-package com.caicai.emipe;
+package com.caicai.emipe.controller;
 
 import com.caicai.emipe.service.ScoreFlowService;
 import com.caicai.emipe.use.HibernateDemo;
