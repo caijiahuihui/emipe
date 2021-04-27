@@ -25,7 +25,7 @@ public abstract class BaseEntity implements Serializable {
     @AllArgsConstructor
     @Getter
     public enum SortProperties {
-        CREATE_DATE("create_date");
+        CREATE_DATE("createDate");
 
         private String remark;
     }
