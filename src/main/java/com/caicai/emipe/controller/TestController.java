@@ -1,5 +1,6 @@
 package com.caicai.emipe.controller;
 
+import com.caicai.emipe.persistence.entity.Person;
 import com.caicai.emipe.service.ScoreFlowService;
 import com.caicai.emipe.use.HibernateDemo;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,12 @@ import java.util.List;
  */
 @RestController
 @Slf4j
+@RequestMapping("/test")
 public class TestController {
+
+
+    @Autowired
+    private Person person;
 
     @Autowired
     private HibernateDemo hibernateDemo;
@@ -49,5 +55,11 @@ public class TestController {
     @PostMapping("saveNotNull")
     public void saveNotNull() {
         hibernateDemo.testSpecification();
+    }
+
+    @GetMapping("testValue")
+    public Person getPerson() {
+        log.info("-------嘿嘿嘿----------" + person.toString());
+        return person;
     }
 }

@@ -17,6 +17,7 @@ import java.util.List;
 public class MenuService {
     @Autowired
     private IMenuRepository menuRepository;
+    
 
     public List<Menu> list() {
         return menuRepository.findAll(Sort.by(BaseEntity.SortProperties.CREATE_DATE.getRemark()));

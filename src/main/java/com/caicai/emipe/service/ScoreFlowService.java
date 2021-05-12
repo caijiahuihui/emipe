@@ -23,9 +23,9 @@ public class ScoreFlowService {
     private ScoreFlowRepository scoreFlowRepository;
 
     @Transactional
-    public String batchSave(List<Long> list){
+    public String batchSave(List<Long> list) {
         List<ScoreFlow> scores = new ArrayList<>();
-        for(Long score:list){
+        for (Long score : list) {
             ScoreFlow flow = new ScoreFlow();
             flow.setScore(score);
             scores.add(flow);
@@ -36,10 +36,9 @@ public class ScoreFlowService {
     }
 
     @Transactional
-    public String simpleSave(List<Long> list){
-        for(Long score :list){
-            scoreFlowRepository.save(new ScoreFlow(null,new Date(),true,new Date(),false,"caicaicai","obj_id123456",1,score,"hahahah","heiheihei"));
-        }
+    public String simpleSave(List<Long> list) {
+        for (Long score : list)
+            scoreFlowRepository.save(new ScoreFlow(null, new Date(), true, new Date(), false, "caicaicai", "obj_id123456", 1, score, "hahahah", "heiheihei"));
         log.error("-------simpleSave----------");
         return "SUCCESS";
     }

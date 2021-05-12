@@ -11,7 +11,16 @@ import lombok.Data;
 @AllArgsConstructor
 public class WechatConfig implements PayConfigInterface {
 
-    private String accountNo;
+    private String appId;
 
-    private String key;
+    private String mahId;
+
+    private String description;
+
+    private String outTradeNo;
+
+    private String timeExpire;
+
+    private String notifyUrl;
+
 }
