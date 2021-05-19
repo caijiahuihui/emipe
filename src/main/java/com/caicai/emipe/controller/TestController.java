@@ -58,8 +58,8 @@ public class TestController {
     }
 
     @GetMapping("testValue")
-    public Person getPerson() {
+    public String getPerson() {
         log.info("-------嘿嘿嘿----------" + person.toString());
-        return person;
+        return person.toString();
     }
 }

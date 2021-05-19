@@ -34,4 +34,9 @@ public class MenuController {
         log.info(menu.toString());
         log.info(testMenu.toString());
     }
+
+    @GetMapping("/oneMenu")
+    public Menu findOneMenu() {
+        return Menu.getInstance("sss", "item", "parentId", "url");
+    }
 }
