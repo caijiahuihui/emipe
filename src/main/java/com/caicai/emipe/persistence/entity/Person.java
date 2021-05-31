@@ -20,12 +20,22 @@ import java.io.Serializable;
 public class Person implements Serializable {
 
     private static final long serialVersionUID = 4272671878981449751L;
-    private String name;
+    public String name;
 
     private Integer age;
 
     private String address;
 
     private String description;
+
+    public void testStatic(String str) {
+        System.out.println(str + this.name);
+    }
+
+    static String HHH = "dasda";
+
+    public static void testIt() {
+        System.out.println(Person.HHH);
+    }
 
 }
