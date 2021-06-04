@@ -21,4 +21,6 @@ public interface UserDao {
 
     int addByParas(User user);
 
+    Map<String, Object> findByUserNameAndPassWord(String username, String password);
+
 }

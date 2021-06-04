@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author caicai
@@ -41,6 +42,10 @@ public class UserService {
 
     public int delete(String id) {
         return userDao.delete(id);
+    }
+
+    public Map<String, Object> findByUsernameAndPassword(String username, String password) {
+        return userDao.findByUserNameAndPassWord(username, password);
     }
 
     public List<User> find() {

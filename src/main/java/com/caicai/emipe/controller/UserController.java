@@ -1,5 +1,6 @@
 package com.caicai.emipe.controller;
 
+import com.caicai.emipe.config.JwtConfig;
 import com.caicai.emipe.persistence.entity.User;
 import com.caicai.emipe.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author caicai
@@ -21,9 +24,21 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Resource
+    private JwtConfig jwtConfig;
+
     @RequestMapping("add")
     public User addUser(@RequestParam(name = "name") String name, @RequestParam(name = "passWord") String passWord) {
         return userService.addUser(name, passWord);
+    }
+
+    @RequestMapping("login")
+    public Map<String, Object> login(@RequestParam(name = "name") String name, @RequestParam(name = "passWord") String passWord) {
+        Map<String, Object> map = userService.findByUsernameAndPassword(name, passWord);
+        String subject = (String) map.get("name");
+        String token = jwtConfig.generateToken(subject);
+        map.put("token", token);
+        return map;
     }
 
     @RequestMapping("otherAdd")

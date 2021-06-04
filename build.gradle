@@ -1,13 +1,33 @@
+// gradle自身的资源配置，比如仓库信息、依赖信息、插件信息等。该配置项应放在配置文件的最开头位置。
+buildscript {
+    repositories {
+        maven { name "Alibaba"; url 'https://maven.aliyun.com/repository/public' }
+        maven { name "Bstek"; url 'http://nexus.bsdn.org/content/groups/public/' }
+        maven { name "M2"; url 'https://plugins.gradle.org/m2/' }
+    }
+}
+
+
+// 插件集合配置。该配置项位置应放在除buildscript配置之外的所有配置项的前面。
 plugins {
     id 'java'
     id 'org.springframework.boot' version '2.2.4.RELEASE'
 }
 
-apply plugin: 'io.spring.dependency-management'
-
+// 相当于maven的groupid
 group 'com.caicai'
+// 相当于maven的version
 version '1.0-SNAPSHOT'
+// maven中的artifactId相当于name，显示在settings.gradle里面
 
+
+//作用：包含配置插件，引用其他配置文件。
+apply plugin: 'io.spring.dependency-management'
+// 引用配置文件
+//apply from: 'config.gradle'
+
+
+// 用于编译和运行时的依赖
 repositories {
     maven {
         url 'http://maven.aliyun.com/nexus/content/groups/public/'
@@ -16,7 +36,10 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor("org.projectlombok:lombok:1.18.10")
+    annotationProcessor(
+            'org.projectlombok:lombok:1.18.10',
+            'org.springframework.boot:spring-boot-configuration-processor'
+    )
     testAnnotationProcessor("org.projectlombok:lombok:1.18.10")
     implementation(
             'org.springframework.boot:spring-boot-starter-web',
@@ -29,13 +52,17 @@ dependencies {
             'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.1',
             'io.jsonwebtoken:jjwt:0.7.0',
             'com.auth0:java-jwt:3.4.0',
-            'org.springframework.boot:spring-boot-configuration-processor'
+            'org.springframework.boot:spring-boot-starter-test'
     )
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation(
+            "org.projectlombok:lombok:1.18.10",
+            'org.springframework.boot:spring-boot-starter-test',
+    )
+
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
-
-test {
-    useJUnitPlatform()
-}
+//
+//test {
+//    useJUnitPlatform()
+//}

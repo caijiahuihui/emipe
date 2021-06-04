@@ -58,4 +58,11 @@ public class UserDaoImpl implements UserDao {
         int[] types = {Types.VARCHAR, Types.VARCHAR, Types.VARCHAR};
         return jdbcTemplate.update(sql, args, types);
     }
+
+    @Override
+    public Map<String, Object> findByUserNameAndPassWord(String username, String password) {
+        String sql = "select name,password from emipe_user where name = '" + username + "' and password = '" + password + "'";
+        Map<String, Object> map = jdbcTemplate.queryForList(sql).get(0);
+        return map;
+    }
 }
