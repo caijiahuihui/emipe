@@ -1,6 +1,6 @@
-package com.caicai.emipe.persistence.repository.testMapper;
+package com.caicai.emipe.persistence.main.testMapper;
 
-import com.caicai.emipe.persistence.entity.EntityUser;
+import com.caicai.emipe.persistence.main.entity.EntityUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Results;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.caicai.emipe.persistence.entity;
+package com.caicai.emipe.persistence.main.entity;
 
 import lombok.*;
 
@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @Getter
 public class AliConfig implements PayConfigInterface {
-    
+
     private String accountNo;
 
     private String key;

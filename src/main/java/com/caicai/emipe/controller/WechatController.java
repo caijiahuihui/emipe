@@ -1,6 +1,6 @@
 package com.caicai.emipe.controller;
 
-import com.caicai.emipe.persistence.entity.Person;
+import com.caicai.emipe.persistence.main.entity.Person;
 import com.caicai.emipe.service.WechatService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

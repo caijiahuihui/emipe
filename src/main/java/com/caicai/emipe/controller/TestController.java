@@ -1,6 +1,6 @@
 package com.caicai.emipe.controller;
 
-import com.caicai.emipe.persistence.entity.Person;
+import com.caicai.emipe.persistence.main.entity.Person;
 import com.caicai.emipe.service.ScoreFlowService;
 import com.caicai.emipe.use.HibernateDemo;
 import lombok.extern.slf4j.Slf4j;

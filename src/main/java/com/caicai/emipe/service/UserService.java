@@ -1,8 +1,8 @@
 package com.caicai.emipe.service;
 
-import com.caicai.emipe.persistence.entity.User;
-import com.caicai.emipe.persistence.repository.dao.UserDao;
-import com.caicai.emipe.persistence.repository.mapper.UserMapper;
+import com.caicai.emipe.persistence.main.dao.UserDao;
+import com.caicai.emipe.persistence.main.entity.User;
+import com.caicai.emipe.persistence.main.mapper.UserMapper;
 import com.caicai.emipe.util.BaseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

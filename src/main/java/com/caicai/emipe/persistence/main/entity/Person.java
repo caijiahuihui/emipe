@@ -1,4 +1,4 @@
-package com.caicai.emipe.persistence.entity;
+package com.caicai.emipe.persistence.main.entity;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -29,7 +29,7 @@ public class Person implements Serializable {
     private String description;
 
     public void testStatic(String str) {
-        System.out.println(str + this.name);
+        System.out.println(str + name);
     }
 
     static String HHH = "dasda";

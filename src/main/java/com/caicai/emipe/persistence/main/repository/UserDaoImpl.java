@@ -1,7 +1,7 @@
-package com.caicai.emipe.persistence.repository;
+package com.caicai.emipe.persistence.main.repository;
 
-import com.caicai.emipe.persistence.entity.User;
-import com.caicai.emipe.persistence.repository.dao.UserDao;
+import com.caicai.emipe.persistence.main.dao.UserDao;
+import com.caicai.emipe.persistence.main.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;

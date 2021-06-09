@@ -1,4 +1,4 @@
-package com.caicai.emipe.persistence.entity;
+package com.caicai.emipe.persistence.main.entity;
 
 /**
  * @author caicai

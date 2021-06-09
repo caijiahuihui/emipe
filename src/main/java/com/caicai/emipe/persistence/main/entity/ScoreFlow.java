@@ -1,4 +1,4 @@
-package com.caicai.emipe.persistence.entity;
+package com.caicai.emipe.persistence.main.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="tab_score_flow")
+@Table(name = "tab_score_flow")
 public class ScoreFlow implements Serializable {
 
     private static final long serialVersionUID = 5987126976988665417L;
@@ -26,36 +26,36 @@ public class ScoreFlow implements Serializable {
     @GenericGenerator(
             name = "uuid-id",
             strategy = "com.caicai.emipe.util.GeneratorUtil")
-    @Column(name="id")
+    @Column(name = "id")
     private String id;
 
-    @Column(name="gmt_create")
+    @Column(name = "gmt_create")
     private Date createTime = new Date();
 
-    @Column(name="is_show")
+    @Column(name = "is_show")
     private boolean isShow;
 
-    @Column(name="gmt_modified")
+    @Column(name = "gmt_modified")
     private Date modifiedTime = new Date();
 
-    @Column(name="is_lock")
+    @Column(name = "is_lock")
     private boolean isLock;
 
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private String userId;
 
-    @Column(name="obj_id")
+    @Column(name = "obj_id")
     private String objId;
 
-    @Column(name="percent")
+    @Column(name = "percent")
     private int percent;
 
-    @Column(name="score")
+    @Column(name = "score")
     private long score;
 
-    @Column(name="type")
+    @Column(name = "type")
     private String name;
 
-    @Column(name="op_user")
+    @Column(name = "op_user")
     private String opUser;
 }

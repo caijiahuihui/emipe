@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
+ * jwt配置类
+ *
  * @author caicai
  * @create 2021/5/31
  */

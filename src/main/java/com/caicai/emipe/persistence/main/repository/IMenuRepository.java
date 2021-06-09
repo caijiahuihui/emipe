@@ -1,6 +1,6 @@
-package com.caicai.emipe.persistence.repository;
+package com.caicai.emipe.persistence.main.repository;
 
-import com.caicai.emipe.persistence.entity.Menu;
+import com.caicai.emipe.persistence.main.entity.Menu;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface IMenuRepository extends JpaRepository<Menu, String> {
-    
+
 }

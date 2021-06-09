@@ -1,6 +1,6 @@
-package com.caicai.emipe.persistence.repository.dao;
+package com.caicai.emipe.persistence.main.dao;
 
-import com.caicai.emipe.persistence.entity.User;
+import com.caicai.emipe.persistence.main.entity.User;
 
 import java.util.List;
 import java.util.Map;

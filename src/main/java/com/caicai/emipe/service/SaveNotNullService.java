@@ -1,7 +1,7 @@
 package com.caicai.emipe.service;
 
-import com.caicai.emipe.persistence.entity.AliConfig;
-import com.caicai.emipe.persistence.entity.PayConfigInterface;
+import com.caicai.emipe.persistence.main.entity.AliConfig;
+import com.caicai.emipe.persistence.main.entity.PayConfigInterface;
 import org.springframework.stereotype.Service;
 
 /**

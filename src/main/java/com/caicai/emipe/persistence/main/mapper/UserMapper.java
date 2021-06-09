@@ -1,6 +1,6 @@
-package com.caicai.emipe.persistence.repository.mapper;
+package com.caicai.emipe.persistence.main.mapper;
 
-import com.caicai.emipe.persistence.entity.User;
+import com.caicai.emipe.persistence.main.entity.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 

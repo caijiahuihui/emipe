@@ -1,7 +1,7 @@
 package com.caicai.emipe.controller;
 
 import com.caicai.emipe.config.JwtConfig;
-import com.caicai.emipe.persistence.entity.User;
+import com.caicai.emipe.persistence.main.entity.User;
 import com.caicai.emipe.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

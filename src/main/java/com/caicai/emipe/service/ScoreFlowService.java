@@ -1,7 +1,7 @@
 package com.caicai.emipe.service;
 
-import com.caicai.emipe.persistence.entity.ScoreFlow;
-import com.caicai.emipe.persistence.repository.ScoreFlowRepository;
+import com.caicai.emipe.persistence.main.entity.ScoreFlow;
+import com.caicai.emipe.persistence.main.repository.ScoreFlowRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -8,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.annotation.Resource;
 
 /**
+ * 过滤器配置类
+ *
  * @author caicai
  * @create 2021/5/31
  */

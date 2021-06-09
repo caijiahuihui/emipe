@@ -1,6 +1,6 @@
 package com.caicai.emipe.controller;
 
-import com.caicai.emipe.persistence.entity.Menu;
+import com.caicai.emipe.persistence.main.entity.Menu;
 import com.caicai.emipe.service.MenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
