@@ -1,5 +1,6 @@
 package com.caicai.emipe.controller;
 
+import com.caicai.emipe.aop.Log;
 import com.caicai.emipe.persistence.other.City;
 import com.caicai.emipe.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("city")
+@Log
 public class CityController {
 
     @Autowired
     private CityService cityService;
 
     @GetMapping("find")
+    @Log
     public Page<City> findCityPage(@RequestParam(value = "size", required = false, defaultValue = "10") int size,
-                                   @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
+                                   @RequestParam(value = "page") int page) {
         return cityService.findCity(page, size);
     }
 

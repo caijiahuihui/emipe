@@ -62,7 +62,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Map<String, Object> findByUserNameAndPassWord(String username, String password) {
         String sql = "select name,password from emipe_user where name = '" + username + "' and password = '" + password + "'";
-        Map<String, Object> map = jdbcTemplate.queryForList(sql).get(0);
+        List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
+        if (list.size() == 0) {
+            return null;
+        }
+        Map<String, Object> map = list.get(0);
         return map;
     }
 }

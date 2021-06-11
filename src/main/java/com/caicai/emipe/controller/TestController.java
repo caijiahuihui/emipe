@@ -1,5 +1,7 @@
 package com.caicai.emipe.controller;
 
+import com.caicai.emipe.aop.Log;
+import com.caicai.emipe.exception.ControllerException;
 import com.caicai.emipe.persistence.main.entity.Person;
 import com.caicai.emipe.service.ScoreFlowService;
 import com.caicai.emipe.use.HibernateDemo;
@@ -16,6 +18,7 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequestMapping("/test")
+@Log
 public class TestController {
 
 
@@ -61,5 +64,14 @@ public class TestController {
     public String getPerson() {
         log.info("-------嘿嘿嘿----------" + person.toString());
         return person.toString();
+    }
+
+    @GetMapping("testError")
+    @Log
+    public String testError(@RequestParam(name = "id") int id) {
+        if (id != 30) {
+            throw new ControllerException("501", "这个id就不对");
+        }
+        return "SUCCESS";
     }
 }

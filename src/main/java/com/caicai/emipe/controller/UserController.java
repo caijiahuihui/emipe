@@ -1,6 +1,8 @@
 package com.caicai.emipe.controller;
 
+import com.caicai.emipe.aop.Log;
 import com.caicai.emipe.config.JwtConfig;
+import com.caicai.emipe.exception.ControllerException;
 import com.caicai.emipe.persistence.main.entity.User;
 import com.caicai.emipe.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +34,13 @@ public class UserController {
         return userService.addUser(name, passWord);
     }
 
+    @Log
     @RequestMapping("login")
     public Map<String, Object> login(@RequestParam(name = "name") String name, @RequestParam(name = "passWord") String passWord) {
         Map<String, Object> map = userService.findByUsernameAndPassword(name, passWord);
+        if (null == map) {
+            throw new ControllerException("501", "用户名或密码错误");
+        }
         String subject = (String) map.get("name");
         String token = jwtConfig.generateToken(subject);
         map.put("token", token);

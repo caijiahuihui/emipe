@@ -40,5 +40,5 @@ public abstract class BaseEntity implements Serializable {
 
     @Column(name = "create_date")
     @Temporal(TIMESTAMP)
-    protected Date createDate;
+    protected Date createDate = new Date();
 }

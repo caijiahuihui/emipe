@@ -1,5 +1,6 @@
 package com.caicai.emipe.controller;
 
+import com.caicai.emipe.aop.Log;
 import com.caicai.emipe.persistence.main.entity.Menu;
 import com.caicai.emipe.service.MenuService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +18,12 @@ import java.util.List;
 @RequestMapping("/menu")
 @RestController
 @Slf4j
+@Log
 public class MenuController {
 
     @Autowired
     private MenuService menuService;
+
 
     @GetMapping("/list")
     public List<Menu> list() {
