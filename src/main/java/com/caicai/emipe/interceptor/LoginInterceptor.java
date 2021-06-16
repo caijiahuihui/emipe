@@ -25,11 +25,14 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         if (url.contains("/login")) {
             return true;
         }
+        if (url.contains("/url")) {
+            return true;
+        }
         String token = request.getHeader(jwtConfig.getHeader());
         if (StringUtils.isEmpty(token)) {
             token = request.getParameter(jwtConfig.getHeader());
         }
-        if (token.isEmpty()) {
+        if (null == token || token.isEmpty()) {
             return false;
         }
         String subject = jwtConfig.parseToken(token);

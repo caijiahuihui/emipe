@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thyemleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>密码</th>
+        </tr>
+        <tr th:each="user,iterStat:${list}">
+            <th th:text="${user.id}"></th>
+            <th th:text="${user.name}"></th>
+            <th th:text="${user.passWord}"></th>
+        </tr>
+    </table>
+</div>
+</html>
