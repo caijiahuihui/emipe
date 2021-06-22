@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -13,8 +14,10 @@ import java.math.BigDecimal;
 @Data
 @Table(name = "cnarea_level_1")
 @Entity
-public class City {
+public class City implements Serializable {
 
+    private static final long serialVersionUID = 921500963943309099L;
+    
     @Id
     @Column(name = "id")
     private Integer id;

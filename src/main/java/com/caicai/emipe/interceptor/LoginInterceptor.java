@@ -22,10 +22,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String url = request.getRequestURI();
         // 如果包含login，则直接去验证用户名密码，不需要去验证token
-        if (url.contains("/login")) {
-            return true;
-        }
-        if (url.contains("/url")) {
+        if (url.contains("/login") || url.contains("/cache") || url.contains("/url")) {
             return true;
         }
         String token = request.getHeader(jwtConfig.getHeader());

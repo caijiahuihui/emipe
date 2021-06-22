@@ -54,7 +54,10 @@ dependencies {
             'io.jsonwebtoken:jjwt:0.7.0',
             'com.auth0:java-jwt:3.4.0',
             'org.springframework.boot:spring-boot-starter-test',
-            'org.springframework.boot:spring-boot-starter-thymeleaf'
+            'org.springframework.boot:spring-boot-starter-thymeleaf',
+            'org.springframework.boot:spring-boot-starter-cache',
+            'org.springframework.boot:spring-boot-starter-data-redis',
+            'net.sf.ehcache:ehcache'
     )
 
     testImplementation(
